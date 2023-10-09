@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     palabraIngresada.addEventListener('input', function () {
         const palabra = palabraIngresada.value.trim();
-        const soloLetras = /^[A-Za-z]+$/.test(palabra);
+        const soloLetras = /^[A-Za-zÁáÉéÍíÓóÚúÜüÑñ]+$/.test(palabra);
 
         btnListo.disabled = palabra.length === 0 || !soloLetras;
     });
