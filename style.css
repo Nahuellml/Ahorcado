@@ -1,0 +1,264 @@
+:root {
+  --color-cuerpo: black;
+}
+
+* { 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(teal, white);
+  font-family: 'Young Serif', serif;
+}
+#titulo {
+  text-align: center;
+  color: rgb(252, 158, 16);
+  -webkit-text-stroke: 0.2px red;
+  margin-top: 2%;
+}
+.contenedor-horca {
+  max-width: 500px;
+  max-height: 500px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 1% auto;
+}
+
+.horca {
+  height: 80%;
+  width: 80%;
+  background-color: whitesmoke;
+  margin: auto;
+}
+
+img{
+  width: 100%;
+  height: 100%;
+  transform: scaleX(-1);
+  background-color: rgba(37, 2, 66, 0);
+}
+
+.contenedor-cuerpo {
+  height: 40%;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 2%;
+  position: absolute;
+  left: 40%;
+  top: 23%;
+}
+
+.cabeza {
+  width: 15%;
+  height: 15%;
+  background-color: var(--color-cuerpo);
+  border-radius: 50%;
+  opacity: 0;
+}
+.cuerpo {
+  width: 20%;
+  height: 25%;
+  background-color: var(--color-cuerpo);
+  opacity: 0;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.brazo-der {
+  width: 6%;
+  height: 20%;
+  background-color: var(--color-cuerpo);
+  position: absolute;
+  left: 34%;
+  top: 16%;
+  rotate: 45deg;
+  opacity: 0;
+  border-top-left-radius: 5px;
+}
+
+.brazo-izq {
+  width: 6%;
+  height: 20%;
+  background-color: var(--color-cuerpo);
+  position: absolute;
+  left: 61%;
+  top: 16%;
+  rotate: -45deg;
+  opacity: 0;
+  border-top-right-radius: 5px;
+}
+
+.pierna-der {
+    width: 5%;
+    height: 20%;
+    background-color: var(--color-cuerpo);
+    position: absolute;
+    top: 40%;
+    left: 44%;
+    opacity: 0;
+}
+.pierna-izq {
+  width: 5%;
+  height: 20%;
+  background-color: var(--color-cuerpo);
+  position: absolute;
+  top: 40%;
+  left: 51%;
+  opacity: 0;
+}
+
+.contenedor-palabra {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5px; 
+}
+
+.contenedor-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+input {
+  font-size: 1.2rem;
+  background-color: blueviolet;
+  color: aliceblue;
+}
+
+.abecedario {
+  display: flex;
+  flex-direction: row;
+  gap: 2px;
+  padding: 1%;
+  margin-top: 5px;
+}
+
+.letra {
+  text-align: center;
+  width: 23px;
+  height: 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  background: #000;
+  color: rgb(159, 102, 216);
+}
+.letra:hover {
+  background-color: aqua;
+}
+.deshabilitada {
+  pointer-events: none;
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.modal-perder {
+  width: 35%;
+  height: 25%;
+  margin: auto;
+  padding: 2%;
+  background-color: rgb(252, 158, 16);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+  display: none;
+ }
+
+.modal-ganar {
+  width: 35%;
+  height: 25%;
+  margin: auto;
+  background-color: rgb(110, 252, 16);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  display: none;
+  padding: 2%;
+  text-align: center;
+}
+
+#mandar-palabra {
+  width: 30%;
+  margin-left: 10px;
+  padding: 5px;
+  background-color: #8c8ef1;
+}
+
+#reiniciar-perder {
+  width: auto;
+  padding: 5px 10px;
+  background-color: #8c8ef1;
+  display: none;
+  margin: 10px auto;
+  text-align: center;
+}
+#reiniciar-ganar {
+  width: auto;
+  padding: 5px 10px;
+  background-color: #8c8ef1;
+  display: none;
+  margin: 10px auto;
+  text-align: center;
+}
+
+span {
+  display: inline-block;
+  margin-right: 10px;
+  min-width: 15px;
+  position: relative;
+  color: rgb(221, 126, 3);
+  text-align: center;
+}
+span::after {
+  content: ' ';
+  position: absolute;
+  display: block;
+  top: 100%;
+  width: 100%;
+  height: 1px;
+  background-color: #000000;
+}
+.correcta {
+  background-color: green;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.incorrecta {
+  background-color: red;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+#adivinar-palabra {
+  width: 80%;
+  display: none;
+  justify-content: center;
+  margin: auto;
+  text-align: center;
+}
+
+.modal-background {
+  width: 100%;
+  height: 100%;
+  background-color: #00000080;
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  left: 0;
+  top: 0;
+  visibility: hidden;
+}
+ 
