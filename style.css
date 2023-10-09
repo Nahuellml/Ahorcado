@@ -19,7 +19,7 @@ body {
   text-align: center;
   color: rgb(252, 158, 16);
   -webkit-text-stroke: 0.2px red;
-  margin-top: 2%;
+  margin-top: 1%;
 }
 .contenedor-horca {
   max-width: 500px;
@@ -140,7 +140,7 @@ input {
   flex-wrap: wrap;
   justify-content: center;
   gap: 4px;
-  padding: 2%;
+  padding: 1%;
   margin-top: 5px;
 }
 
