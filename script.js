@@ -22,9 +22,11 @@ document.addEventListener("DOMContentLoaded", function () {
     btnListo.disabled = true;
     deshabilitarLetras();
 
+    
+
     palabraIngresada.addEventListener('keydown', function (e) {
         const teclaPresionada = e.key;
-        if (!/[A-Za-z]/.test(teclaPresionada) && teclaPresionada !== 'Enter') {
+        if (!/^[A-Za-zÁáÉéÍíÓóÚúÜüÑñ]+$/.test(teclaPresionada) && teclaPresionada !== 'Enter') {
             e.preventDefault();
         }
     });
