@@ -116,6 +116,10 @@ document.addEventListener("DOMContentLoaded", function () {
         piernaIzq.style.opacity = '0';
     }
 
+    function quitarAcentos(texto) {
+        return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    }
+    
     abecedario.forEach((letra) => {
         letra.addEventListener('click', (e) => {
             const letraSeleccionada = e.target.textContent;
@@ -125,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (errores < 6) {
                 for (let i = 0; i < palabra.length; i++) {
-                    if (palabra[i].toUpperCase() === letraSeleccionada) {
+                    if (quitarAcentos(palabra[i].toUpperCase()) === quitarAcentos(letraSeleccionada)) {
                         spans[i].textContent = letraSeleccionada;
                         letraEncontrada = true;
                         totalLetrasAcertadas ++;
