@@ -13,6 +13,7 @@ body {
   width: 100%;
   background: linear-gradient(teal, white);
   font-family: 'Young Serif', serif;
+  overflow: hidden;
 }
 #titulo {
   text-align: center;
@@ -263,6 +264,20 @@ span {
   .contenedor-horca {
     width: 300px;
     height: 300px;
+  }
+  .contenedor-palabra {
+    flex-wrap: wrap;
+  }
+
+  .contenedor-input {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  #mandar-palabra {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
 }
