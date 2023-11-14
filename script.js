@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const modalBackground = document.querySelector('.modal-background');
     const modalGanar = document.querySelector('.modal-ganar');
     const modalPerder = document.querySelector('.modal-perder');
+    const palabraNoAdivinada = document.getElementById('palabra-no-adivinada');
 
     let letrasDeshabilitadas = true;
     let totalLetrasAcertadas = 0;
@@ -99,6 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
         modalBackground.style.visibility = 'visible';
         modalPerder.style.display = 'block';
         btnReiniciarPerder.style.display = 'block';
+        palabraNoAdivinada.textContent = 'La palabra ingresada era: ' + palabraIngresada.value;
     }
 
     function mostrarModalGanar() {

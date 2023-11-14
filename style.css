@@ -18,7 +18,6 @@ body {
 #titulo {
   text-align: center;
   color: rgb(252, 158, 16);
-  -webkit-text-stroke: 0.2px red;
   margin-top: 1%;
 }
 .contenedor-horca {
