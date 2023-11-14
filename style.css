@@ -14,6 +14,7 @@ body {
   background: linear-gradient(teal, white);
   font-family: 'Young Serif', serif;
   overflow: hidden;
+  background-repeat: no-repeat;
 }
 #titulo {
   text-align: center;
@@ -278,5 +279,10 @@ span {
     align-items: center;
     justify-content: center;
   }
-
+}
+@media (max-width: 505px) {
+  .modal-perder, .modal-ganar {
+    height: 40%;
+    width: 55%;
+  }
 }
