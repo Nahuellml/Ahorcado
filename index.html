@@ -6,80 +6,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AHORCADO</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Young+Serif&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div class="modal-background">
-        <div class="modal-perder">
-            <h2>¡Has sido decapitado!</h2>
-            <p>¿Quiéres volver al patíbulo?</p>
-            <button id="reiniciar-perder">Reiniciar</button>
-            <p id="palabra-no-adivinada"></p>
-        </div>
-        <div class="modal-ganar">
-            <h2>¡Has acertado!</h2>
-            <p>¿Quiéres vencer nuevamente a tu enemigo?</p>
-            <button id="reiniciar-ganar">Reiniciar</button>
-        </div>
-    </div>
+  <div class="modal-background">
+      <div class="hacha">
+        <img id="img-hacha" src="imagenes/Hacha.svg" alt="Hacha">
+      </div>
+      <div class="modal-perder">
+          <h2>¡Has sido decapitado!</h2>
+          <p>¿Quiéres volver al patíbulo?</p>
+          <button id="reiniciar-perder">Reiniciar</button>
+          <p id="palabra-no-adivinada"></p>
+      </div>
+      <div class="modal-ganar">
+          <h2>¡Has acertado!</h2>
+          <p>¿Quiéres vencer nuevamente a tu enemigo?</p>
+          <button id="reiniciar-ganar">Reiniciar</button>
+      </div>
+  </div>
+  <div class="contenedor-horca">
     <h1 id="titulo">AHORCADO</h1>
-    <div class="contenedor-horca">
-        <div class="horca">
-            <img src="imagenes/Patíbulo.svg" alt="">
-            <div class="contenedor-cuerpo">
-                <div class="cabeza"></div>
-                <div class="cuerpo"></div>
-                <div class="brazo-der"></div>
-                <div class="brazo-izq"></div>
-                <div class="pierna-der"></div>
-                <div class="pierna-izq"></div>
-            </div>
+    <div class="horca">
+        <img id="patibulo" src="imagenes/horca1.png" alt="Patíbulo">
+        <div class="contenedor-cuerpo">
+            <div class="cabeza"></div>
+            <div class="cuerpo"></div>
+            <div class="brazo-der"></div>
+            <div class="brazo-izq"></div>
+            <div class="pierna-der"></div>
+            <div class="pierna-izq"></div>
         </div>
-
-        <div class="abecedario">
-            <div class="letra">A</div>
-            <div class="letra">B</div>
-            <div class="letra">C</div>
-            <div class="letra">D</div>
-            <div class="letra">E</div>
-            <div class="letra">F</div>
-            <div class="letra">G</div>
-            <div class="letra">H</div>
-            <div class="letra">I</div>
-            <div class="letra">J</div>
-            <div class="letra">K</div>
-            <div class="letra">L</div>
-            <div class="letra">M</div>
-            <div class="letra">N</div>
-            <div class="letra">Ñ</div>
-            <div class="letra">O</div>
-            <div class="letra">P</div>
-            <div class="letra">Q</div>
-            <div class="letra">R</div>
-            <div class="letra">S</div>
-            <div class="letra">T</div>
-            <div class="letra">U</div>
-            <div class="letra">V</div>
-            <div class="letra">W</div>
-            <div class="letra">X</div>
-            <div class="letra">Y</div>
-            <div class="letra">Z</div>
-        </div>
-        <div class="contenedor-palabra">
-            <div id="adivinar-palabra"></div>
-            <div class="contenedor-input">
-                <input type="text" placeholder="Ingrese palabra..." id="palabra-ingresada" autocomplete="off" autofocus>
-                <button id="mandar-palabra">Comenzar</button>
-            </div>
-            
-        </div>
-        
     </div>
-    <script src="script.js"></script>
+
+    <div class="abecedario">
+        <div class="letra">A</div>
+        <div class="letra">B</div>
+        <div class="letra">C</div>
+        <div class="letra">D</div>
+        <div class="letra">E</div>
+        <div class="letra">F</div>
+        <div class="letra">G</div>
+        <div class="letra">H</div>
+        <div class="letra">I</div>
+        <div class="letra">J</div>
+        <div class="letra">K</div>
+        <div class="letra">L</div>
+        <div class="letra">M</div>
+        <div class="letra">N</div>
+        <div class="letra">Ñ</div>
+        <div class="letra">O</div>
+        <div class="letra">P</div>
+        <div class="letra">Q</div>
+        <div class="letra">R</div>
+        <div class="letra">S</div>
+        <div class="letra">T</div>
+        <div class="letra">U</div>
+        <div class="letra">V</div>
+        <div class="letra">W</div>
+        <div class="letra">X</div>
+        <div class="letra">Y</div>
+        <div class="letra">Z</div>
+    </div>
+    
+    <div class="contenedor-palabra">
+        <div id="adivinar-palabra"></div>
+        <div class="contenedor-input">
+            <input type="text" placeholder="Ingrese palabra..." id="palabra-ingresada" autocomplete="off" autofocus>
+            <button id="mandar-palabra">Comenzar</button>
+        </div>     
+    </div>
+  </div>
+  <script src="script.js"></script>
 </body>
 
 </html>

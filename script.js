@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const modalBackground = document.querySelector('.modal-background');
     const modalGanar = document.querySelector('.modal-ganar');
     const modalPerder = document.querySelector('.modal-perder');
+    const hacha = document.querySelector('.hacha');
     const palabraNoAdivinada = document.getElementById('palabra-no-adivinada');
 
     let letrasDeshabilitadas = true;
@@ -91,12 +92,16 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function ocultarModales() {
+        hacha.style.display = 'none';
+        hacha.classList.remove('animacion-hacha');
         modalGanar.style.display = 'none';
         modalPerder.style.display = 'none';
         modalBackground.style.visibility = 'hidden';
     }
 
     function mostrarModalPerder() {
+        hacha.style.display = 'block';
+        hacha.classList.add('animacion-hacha');
         modalBackground.style.visibility = 'visible';
         modalPerder.style.display = 'block';
         btnReiniciarPerder.style.display = 'block';
@@ -104,6 +109,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function mostrarModalGanar() {
+        hacha.style.display = 'block';
+        hacha.classList.add('animacion-hacha');
         modalBackground.style.visibility = 'visible';
         modalGanar.style.display = 'block';
         btnReiniciarGanar.style.display = 'block';
