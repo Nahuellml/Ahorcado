@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function ponerPalabra() {
-        const palabra = palabraIngresada.value.toUpperCase();
+        const palabra =quitarAcentos(palabraIngresada.value.toUpperCase());
         adivinarPalabra.innerHTML = '';
         adivinarPalabra.style.display = 'block';
         for (let i = 0; i < palabra.length; i++) {
