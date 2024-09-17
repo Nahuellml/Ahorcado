@@ -193,4 +193,14 @@ document.addEventListener("DOMContentLoaded", function () {
     btnReiniciarPerder.addEventListener('click', reiniciar);
     btnReiniciarGanar.addEventListener('click', reiniciar);
 
+    const cabezaManiqui = document.getElementById('cabeza');
+    const pathCabeza = cabezaManiqui.querySelector('path');
+    const torsoManiqui = document.getElementById('torso');
+    const pathTorso = torsoManiqui.querySelector('path');
+
+    console.log(pathCabeza.attributes.fill);
+
+    pathCabeza.setAttribute('fill', '#0005')
+    pathTorso.setAttribute('fill', 'url(#grad1)')
+
 });

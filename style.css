@@ -1,5 +1,5 @@
 :root {
-  --color-cuerpo: black;
+  --color-cuerpo: radial-gradient( #b29659, #72603a);
 }
 
 * { 
@@ -11,7 +11,7 @@
 body {
   min-height: 100vh;
   width: 100%;
-  background: linear-gradient(teal, #000);
+  background: linear-gradient(teal 50%, #000 75%);
   font-family: 'Young Serif', serif;
   overflow: hidden;
   background-repeat: no-repeat;
@@ -21,19 +21,19 @@ body {
 
 #titulo {
   color: rgb(252, 158, 16);
-  padding: 1rem;
+  /* padding: 1rem; */
 }
 
 .contenedor-horca {
-  max-width: 500px;
+  /* max-width: 500px;
   max-height: 500px;
-  width: 80%;
+  width: 80%; */
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 2rem 0;
+  /* margin: 2rem 0; */
 }
 
 .horca {
@@ -52,32 +52,33 @@ body {
       linear-gradient(black 80%, transparent 99%);
     /* Transparente en la parte inferior */
     mask-composite: intersect;
-    border-radius: 50px;
+    border-bottom-right-radius: 120px;
+    border-bottom-left-radius: 120px;
 }
 
 .contenedor-cuerpo {
-  height: 40%;
-  width: 30%;
+  height: 26%;
+  width: 28%;
   display: flex;
   align-items: center;
   flex-direction: column;
   padding: 2%;
   position: absolute;
-  left: 33%;
-  top: 28%;
+  left: 33.2%;
+  top: 29.2%;
 }
 
 .cabeza {
   width: 15%;
   height: 15%;
-  background-color: var(--color-cuerpo);
+  background: var(--color-cuerpo);
   border-radius: 50%;
   opacity: 0;
 }
 .cuerpo {
   width: 20%;
   height: 25%;
-  background-color: var(--color-cuerpo);
+  background: var(--color-cuerpo);
   opacity: 0;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
@@ -86,71 +87,99 @@ body {
 .brazo-der {
   width: 6%;
   height: 20%;
-  background-color: var(--color-cuerpo);
+  background: var(--color-cuerpo);
   position: absolute;
   left: 34%;
   top: 16%;
   rotate: 45deg;
   opacity: 0;
   border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 .brazo-izq {
   width: 6%;
   height: 20%;
-  background-color: var(--color-cuerpo);
+  background: var(--color-cuerpo);
   position: absolute;
   left: 61%;
   top: 16%;
   rotate: -45deg;
   opacity: 0;
   border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 .pierna-der {
-    width: 5%;
-    height: 20%;
-    background-color: var(--color-cuerpo);
-    position: absolute;
-    top: 40%;
-    left: 44%;
-    opacity: 0;
+  width: 6%;
+  height: 20%;
+  background: var(--color-cuerpo);
+  position: absolute;
+  top: 40%;
+  left: 44%;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  opacity: 0;
 }
 .pierna-izq {
-  width: 5%;
+  width: 6%;
   height: 20%;
-  background-color: var(--color-cuerpo);
+  background: var(--color-cuerpo);
   position: absolute;
   top: 40%;
   left: 51%;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   opacity: 0;
 }
 
 .contenedor-palabra {
+  width: clamp(250px, 400px, 80%);
+  height: clamp(50px, 15vh, 20vh);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 5px; 
+  margin-bottom: 1rem;
+  /* padding: 25px;  */
+  background: url(imagenes/texture-wood.png), rgb(65, 43, 4);
+  box-shadow: 0 0 30px rgb(241, 204, 35);
+  border-radius: 10px;
+  border: 5px ridge rgb(100, 84, 29);
 }
+
+
 
 .contenedor-input {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   max-width: 90%;
 }
 
 input {
   width: 60%;
-  font-size: 1.2rem;
-  background-color: blueviolet;
-  color: aliceblue;
-  border: 5px solid red;
+  font-size: .9rem;
+  padding: 0.5rem 1rem;
+  background-color: rgba(37, 2, 66, 0);
+  color: #fc9e10;
+  box-shadow: 0 0 10px inset #000000;
+}
+
+input::placeholder {
+  color: #fc9e10;
+}
+
+input:focus {
+  border-color: #e2d5ba54;
+  outline: none;
 }
 
 .abecedario {
-  max-width: 90%;
+  width: fit-content;
+  height: fit-content;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -159,16 +188,16 @@ input {
 }
 
 .letra {
-  display: inline-block;
-  position: relative;
-  font-size: 16px;
-  width: 30px;
-  height: 30px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  width: 25px;
+  height: 25px;
   background-color: #884400;
   color: gold;
   text-align: center;
   border-radius: 100%;
-  line-height: 30px;
   text-shadow: 0px 1px 0px #444400,
                1px 1px 0px #444400,
                1px 0px 0px #444400;
@@ -299,10 +328,25 @@ input {
 }
 
 #mandar-palabra {
-  width: 30%;
-  margin-left: 10px;
-  padding: 2px;
-  background-color: #8c8ef1;
+  color: #fc9e10;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  background-color: rgba(255, 217, 0, 0.137);
+  border: 1px solid #fc9e10;
+  border-bottom: 5px solid #fc9e10;
+  box-shadow: 1px -1px 5px #fc9e10;
+}
+
+#mandar-palabra:active {
+  border-bottom: 1px solid #fc9e10;
+  box-shadow: 0 0 3px #fc9e10;
+}
+
+#mandar-palabra::before {
+  content: '';
+  position: absolute;
+  
 }
 
 #reiniciar-perder {
@@ -394,3 +438,8 @@ span {
     width: 55%;
   }
 } */
+
+svg {
+  width: 100%;
+  height: 100%;
+}
