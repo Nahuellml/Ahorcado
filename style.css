@@ -33,7 +33,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* margin: 2rem 0; */
+  margin: 2rem 0;
 }
 
 .horca {
@@ -178,13 +178,13 @@ input:focus {
 }
 
 .abecedario {
-  width: fit-content;
+  width: 80%;
   height: fit-content;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 4px;
-  padding: 1rem;
+  padding: 0 0 2rem;
 }
 
 .letra {
