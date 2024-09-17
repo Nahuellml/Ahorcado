@@ -1,11 +1,11 @@
 
 document.addEventListener("DOMContentLoaded", function () {
-    const cabeza = document.querySelector('.cabeza');
-    const cuerpo = document.querySelector('.cuerpo');
-    const brazoDer = document.querySelector('.brazo-der');
-    const brazoIzq = document.querySelector('.brazo-izq');
-    const piernaDer = document.querySelector('.pierna-der');
-    const piernaIzq = document.querySelector('.pierna-izq');
+    const cabeza =  document.getElementById('cabeza').querySelector('path');
+    const cuerpo =  document.getElementById('torso').querySelector('path');
+    const brazoDer =  document.getElementById('brazo-der').querySelector('path');
+    const brazoIzq =  document.getElementById('brazo-izq').querySelector('path');
+    const piernaDer =  document.getElementById('pierna-der').querySelector('path');
+    const piernaIzq =  document.getElementById('pierna-izq').querySelector('path');
     const palabraIngresada = document.getElementById('palabra-ingresada');
     const adivinarPalabra = document.getElementById('adivinar-palabra');
     const btnListo = document.getElementById('mandar-palabra');
@@ -80,6 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
         palabraIngresada.style.display = 'block';
         palabraIngresada.value = '';
         adivinarPalabra.textContent = '';
+        adivinarPalabra.style.display = 'none';
         btnListo.style.display = 'block'
         reiniciarPartesDelCuerpo();
         ocultarModales();
@@ -117,12 +118,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     
     function reiniciarPartesDelCuerpo(){
-        cabeza.style.opacity = '0';
-        cuerpo.style.opacity = '0';
-        brazoDer.style.opacity = '0';
-        brazoIzq.style.opacity = '0';
-        piernaDer.style.opacity = '0';
-        piernaIzq.style.opacity = '0';
+        cabeza.setAttribute('fill', '#0005');
+        cuerpo.setAttribute('fill', '#0005');
+        brazoDer.setAttribute('fill', '#0005');
+        brazoIzq.setAttribute('fill', '#0005');
+        piernaDer.setAttribute('fill', '#0005');
+        piernaIzq.setAttribute('fill', '#0005');
     }
 
     function quitarAcentos(texto) {
@@ -163,22 +164,22 @@ document.addEventListener("DOMContentLoaded", function () {
     function mostrarPartesDelCuerpo(errores) {
         switch (errores) {
             case 1:
-                cabeza.style.opacity = '1';
+                cabeza.setAttribute('fill', 'url(#grad1)');
                 break;
             case 2:
-                cuerpo.style.opacity = '1';
+                cuerpo.setAttribute('fill', 'url(#grad1)');
                 break;
             case 3:
-                brazoDer.style.opacity = '1';
+                brazoDer.setAttribute('fill', 'url(#grad1)');
                 break;
             case 4:
-                brazoIzq.style.opacity = '1';
+                brazoIzq.setAttribute('fill', 'url(#grad1)');
                 break;
             case 5:
-                piernaDer.style.opacity = '1';
+                piernaDer.setAttribute('fill', 'url(#grad1)');
                 break;
             case 6:
-                piernaIzq.style.opacity = '1';
+                piernaIzq.setAttribute('fill', 'url(#grad1)');
                 break;
         }
     }
@@ -192,15 +193,4 @@ document.addEventListener("DOMContentLoaded", function () {
     btnListo.addEventListener('click', ponerPalabra);
     btnReiniciarPerder.addEventListener('click', reiniciar);
     btnReiniciarGanar.addEventListener('click', reiniciar);
-
-    const cabezaManiqui = document.getElementById('cabeza');
-    const pathCabeza = cabezaManiqui.querySelector('path');
-    const torsoManiqui = document.getElementById('torso');
-    const pathTorso = torsoManiqui.querySelector('path');
-
-    console.log(pathCabeza.attributes.fill);
-
-    pathCabeza.setAttribute('fill', '#0005')
-    pathTorso.setAttribute('fill', 'url(#grad1)')
-
 });

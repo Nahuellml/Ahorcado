@@ -33,15 +33,14 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   margin-bottom: 2rem;
 }
 
 .horca {
   width: 100%;
-  height: 60%;/* 
-  background-color: whitesmoke; */
+  height: auto;/
 }
 
 #patibulo {
@@ -70,7 +69,7 @@ body {
   top: 29.2%;
 }
 
-.cabeza {
+/* .cabeza {
   width: 15%;
   height: 15%;
   background: var(--color-cuerpo);
@@ -135,7 +134,7 @@ body {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   opacity: 0;
-}
+} */
 
 .contenedor-palabra {
   width: clamp(250px, 400px, 80%);
@@ -185,7 +184,8 @@ input:focus {
   flex-wrap: wrap;
   justify-content: center;
   gap: 4px;
-  padding: 0 0 2rem;
+  /* padding: 0 0 2rem; */
+  padding: .5rem;
 }
 
 .letra {
@@ -193,8 +193,8 @@ input:focus {
   justify-content: center;
   align-items: center;
   font-size: 15px;
-  width: 25px;
-  height: 25px;
+  width: 26px;
+  height: 26px;
   background-color: #884400;
   color: gold;
   text-align: center;
