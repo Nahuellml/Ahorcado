@@ -39,8 +39,10 @@ document.addEventListener("DOMContentLoaded", function () {
     messagesDiv.scrollTop = messagesDiv.scrollHeight;
   };
 
-  //Conectarse al servidor WebSocket
-  const socket = new WebSocket("ws://localhost:3000");
+  //Conectarse al servidor WebSocket// Detecta automáticamente si usas http o https y cambia a ws o wss
+  const protocol = window.location.protocol === "https:" ? "wss:" : "ws:";
+  const host = window.location.host; // Toma 'tu-juego.onrender.com' automáticamente
+  const socket = new WebSocket(`${protocol}//${host}`);
 
   //Cuando la conexión se abre
   socket.onopen = function (event) {
