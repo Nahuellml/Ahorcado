@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const cabeza = document.getElementById("cabeza").querySelector("path");
-  const cuerpo = document.getElementById("torso").querySelector("path");
-  const brazoDer = document.getElementById("brazo-der").querySelector("path");
-  const brazoIzq = document.getElementById("brazo-izq").querySelector("path");
-  const piernaDer = document.getElementById("pierna-der").querySelector("path");
-  const piernaIzq = document.getElementById("pierna-izq").querySelector("path");
+  const cabeza = document.getElementById("cabeza");
+  const cuerpo = document.getElementById("torso");
+  const brazoDer = document.getElementById("brazo-der");
+  const brazoIzq = document.getElementById("brazo-izq");
+  const piernaDer = document.getElementById("pierna-der");
+  const piernaIzq = document.getElementById("pierna-izq");
   const palabraIngresada = document.getElementById("palabra-ingresada");
   const adivinarPalabra = document.getElementById("adivinar-palabra");
   const btnListo = document.getElementById("mandar-palabra");
@@ -178,15 +178,6 @@ document.addEventListener("DOMContentLoaded", function () {
     btnReiniciarGanar.style.display = "block";
   }
 
-  function reiniciarPartesDelCuerpo() {
-    cabeza.setAttribute("fill", "#0005");
-    cuerpo.setAttribute("fill", "#0005");
-    brazoDer.setAttribute("fill", "#0005");
-    brazoIzq.setAttribute("fill", "#0005");
-    piernaDer.setAttribute("fill", "#0005");
-    piernaIzq.setAttribute("fill", "#0005");
-  }
-
   function quitarAcentos(texto) {
     return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
   }
@@ -225,27 +216,39 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // Función auxiliar para pintar todos los <path> dentro de un grupo
+  function pintarGrupo(grupo, color) {
+    if (!grupo) return;
+    const paths = grupo.querySelectorAll("path");
+    paths.forEach((path) => path.setAttribute("fill", color));
+  }
+
   function mostrarPartesDelCuerpo(errores) {
     switch (errores) {
       case 1:
-        cabeza.setAttribute("fill", "url(#grad1)");
+        pintarGrupo(cabeza, "url(#grad1)");
         break;
       case 2:
-        cuerpo.setAttribute("fill", "url(#grad1)");
+        pintarGrupo(cuerpo, "url(#grad1)");
         break;
       case 3:
-        brazoDer.setAttribute("fill", "url(#grad1)");
+        pintarGrupo(brazoDer, "url(#grad1)");
         break;
       case 4:
-        brazoIzq.setAttribute("fill", "url(#grad1)");
+        pintarGrupo(brazoIzq, "url(#grad1)");
         break;
       case 5:
-        piernaDer.setAttribute("fill", "url(#grad1)");
+        pintarGrupo(piernaDer, "url(#grad1)");
         break;
       case 6:
-        piernaIzq.setAttribute("fill", "url(#grad1)");
+        pintarGrupo(piernaIzq, "url(#grad1)");
         break;
     }
+  }
+
+  function reiniciarPartesDelCuerpo() {
+    const partes = [cabeza, cuerpo, brazoDer, brazoIzq, piernaDer, piernaIzq];
+    partes.forEach((parte) => pintarGrupo(parte, "#0004"));
   }
 
   palabraIngresada.addEventListener("keyup", function (e) {
