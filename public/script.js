@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ) {
       document.getElementById("status").textContent = "¡Juego en marcha!";
     } else {
-      appendMessage(`Jugador: ${message}`);
+      appendMessage(message);
     }
   };
 
